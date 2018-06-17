@@ -1,0 +1,8 @@
+version: '3'
+services:
+  onedrive:
+    build: ./
+    image: davidbarratt/onedrive:latest
+    volumes:
+      - ./config:/root/.config/onedrive:cached
+      - ./data:/root/OneDrive:cached
