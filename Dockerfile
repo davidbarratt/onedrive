@@ -20,11 +20,11 @@ RUN curl http://master.dl.sourceforge.net/project/d-apt/files/d-apt.list -o /etc
 WORKDIR /root
 
 ENV ONEDRIVE_OWNER abraunegg
-ENV ONEDRIVE_VERSION 1.1.2
+ENV ONEDRIVE_REF master
 
 RUN git clone "https://github.com/${ONEDRIVE_OWNER}/onedrive.git" \
 	&& cd onedrive \
-	&& git checkout "v${ONEDRIVE_VERSION}" \
+	&& git checkout "${ONEDRIVE_REF}" \
 	&& make \
 	&& make install \
 	&& cp onedrive /usr/bin/onedrive \
